@@ -1,3 +1,4 @@
+import subprocess
 from reportlab.lib.pagesizes import landscape, letter
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 from reportlab.lib import colors
@@ -33,6 +34,9 @@ def generate_report(file_path, order_data):
 
     # Constrói o PDF com a tabela
     pdf.build([order_table])
+
+    # Abre o visualizador de PDF padrão do sistema
+    subprocess.Popen(["start", "", file_path], shell=True)
 
 # Dados para o relatório
 dados_pedido = {
