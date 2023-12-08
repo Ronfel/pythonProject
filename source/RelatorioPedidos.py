@@ -3,7 +3,7 @@ from reportlab.lib.pagesizes import landscape, letter
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 from reportlab.lib import colors
 
-def generate_report(file_path, order_data):
+def gerar_relatorio(file_path, order_data):
     pdf = SimpleDocTemplate(file_path, pagesize=landscape(letter))
 
     # Lista para armazenar dados da tabela
@@ -50,5 +50,6 @@ dados_pedido = {
     ]
 }
 
-# Estudando geração de relatório
-generate_report("pedido_e_recibo_colunado_com_titulo.pdf", dados_pedido)
+def gerar():
+    # Estudando geração de relatório
+    gerar_relatorio("pedido_e_recibo_colunado_com_titulo.pdf", dados_pedido)
