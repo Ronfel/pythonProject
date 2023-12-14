@@ -5,6 +5,7 @@ import Pedidos
 import Produtos
 import RelatorioPedidos
 import RelatorioClientes
+import RelatorioProdutos
 import Usuarios
 
 
@@ -33,6 +34,7 @@ class TelaPrincipalApp:
         self.menu_bar.add_cascade(label="Relatórios", menu=self.menu_relatorios)
         self.menu_relatorios.add_command(label="Pedidos", command=self.abrir_relatorio_pedidos)
         self.menu_relatorios.add_command(label="Clientes", command=self.abrir_relatorio_clientes)
+        self.menu_relatorios.add_command(label="Produtos", command=self.abrir_relatorio_produtos)
 
         # Menu Relatórios
         self.menu_usuarios = tk.Menu(self.menu_bar, tearoff=0)
@@ -69,6 +71,10 @@ class TelaPrincipalApp:
     @staticmethod
     def abrir_relatorio_clientes():
         RelatorioClientes.gerar()
+
+    @staticmethod
+    def abrir_relatorio_produtos():
+        RelatorioProdutos.gerar()
 
 
 if __name__ == "__main__":
