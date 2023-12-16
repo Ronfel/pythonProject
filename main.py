@@ -1,13 +1,14 @@
 import tkinter as tk
-import Clientes
-import Fornecedores
-import Pedidos
-import Produtos
-import RelatorioPedidos
-import RelatorioClientes
-import RelatorioProdutos
-import RelatorioFornecedores
-import Usuarios
+import source.forms.TelaClientes as TelaClientes
+import source.forms.TelaFornecedores as TelaFornecedores
+import source.forms.TelaPedidos as TelaPedidos
+import source.forms.TelaProdutos as TelaProdutos
+import source.reports.RelatorioPedidos as RelatorioPedidos
+import source.reports.RelatorioClientes as RelatorioClientes
+import source.reports.RelatorioProdutos as RelatorioProdutos
+import source.reports.RelatorioFornecedores as RelatorioFornecedores
+import source.forms.TelaUsuarios as TelaUsuarios
+import source.forms.TelaLogin as TelaLogin
 
 
 class TelaPrincipalApp:
@@ -50,23 +51,23 @@ class TelaPrincipalApp:
 
     def abrir_cadastro_clientes(self):
         dlg = tk.Toplevel(self.app)
-        Clientes.CadastroClientesApp(dlg)
+        TelaClientes.CadastroClientesApp(dlg)
 
     def abrir_cadastro_produtos(self):
         dlg = tk.Toplevel(self.app)
-        Produtos.CadastroProdutosApp(dlg)
+        TelaProdutos.CadastroProdutosApp(dlg)
 
     def abrir_cadastro_fornecedores(self):
         dlg = tk.Toplevel(self.app)
-        Fornecedores.CadastroFornecedoresApp(dlg)
+        TelaFornecedores.CadastroFornecedoresApp(dlg)
 
     def abrir_cadastro_pedidos(self):
         dlg = tk.Toplevel(self.app)
-        Pedidos.CadastroPedidosApp(dlg)
+        TelaPedidos.CadastroPedidosApp(dlg)
 
     def abrir_cadastro_usuarios(self):
         dlg = tk.Toplevel(self.app)
-        Usuarios.CadastroUsuariosApp(dlg)
+        TelaUsuarios.CadastroUsuariosApp(dlg)
 
     @staticmethod
     def abrir_relatorio_pedidos():
@@ -86,5 +87,6 @@ class TelaPrincipalApp:
 
 if __name__ == "__main__":
     root = tk.Tk()
+    TelaLogin.TelaLogin(root)
     app = TelaPrincipalApp(root)
     root.mainloop()

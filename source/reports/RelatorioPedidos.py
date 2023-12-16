@@ -52,4 +52,4 @@ dados_pedido = {
 
 def gerar():
     # Estudando geração de relatório
-    gerar_relatorio("pedido_e_recibo_colunado_com_titulo.pdf", dados_pedido)
+    gerar_relatorio("relatorioPedido.pdf", dados_pedido)
